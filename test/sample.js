@@ -1,13 +1,14 @@
 const puppeteer = require('puppeteer');
 const expect = require('chai').expect;
 const pageObject = require('../pages/page');
+const addContext = require('mochawesome/addContext');
 
-describe('sample test', async () => {
+describe('sample test', async function() {
     let browser, page;
     const opts = {
         //headless: false,
         //slowMo: 10,
-        devtools: true,
+        //devtools: true,
     };
 
     before(async () => {
@@ -20,7 +21,7 @@ describe('sample test', async () => {
         await browser.close();
     });
 
-    it('Website should load', async () => {
+    it('Website should load', async function() {
         try{
             const response = await page.goto('https://www.thoughtworks.com/', {waitUntil: 'domcontentloaded'});
             expect(response.status()).to.equal(200);
@@ -38,7 +39,7 @@ describe('sample test', async () => {
             //click example
             await page.waitForSelector(pageObject.thankYou);
             const thankYouTitle = await page.$eval(pageObject.thankYou, el => el.textContent);
-            expect(thankYouTitle).to.equal('Thank you for 25 amazing years');
+            expect(thankYouTitle).to.equal('Thank ou for 25 amazing years');
 
             await page.type(pageObject.search.searchBar, 'selenium');
             const [res2] = await Promise.all([
@@ -54,6 +55,7 @@ describe('sample test', async () => {
             expect(seleniumBirth).to.equal('Happy 10th Birthday, Selenium | ThoughtWorks');
 
         }catch (e) {
+            //full screenshot
             const dimensions = await page.evaluate(() => {
                 return {
                     width: document.documentElement.clientWidth,
@@ -62,9 +64,16 @@ describe('sample test', async () => {
                 };
             });
             page.setViewport({width: dimensions.width, height: dimensions.height});
-            page.screenshot({path: './output/failed.png'});
+            await page.screenshot({path: './output/failed.png'});
+            await addContext(this, 'hahahahaha test failed, look at the screenshot');
+            await addContext(this, '../output/failed.png');
             throw e;
         }
 
     }).timeout(0);//this way can disable timeout, or set up timeout in package.json
+
+    it('should add context', function(){
+        expect(1+1).to.equal(2);
+        addContext(this, 'context2');
+    })
 });
