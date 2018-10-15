@@ -1,6 +1,10 @@
 let page;
 
 module.exports = {
+    search:{
+        searchBar:'#search-bar-input',
+        searchButton: '#util-menu > li:nth-child(1) > div > form > button',
+    },
 
     inventingAndDelivering:{
         technologyRadar: '#home-tile-201807-radar',
@@ -10,7 +14,7 @@ module.exports = {
         careers: '#home-tile-201807-careers'
     },
     thankYou: '#content-item > div.modules > div.modules__list > div.module.module-side_by_side_image_text > div > div > div > div > div > div:nth-child(2) > div > div > div > h2',
-
+    seleniumBirth: 'body > div:nth-child(7) > div > div.grid__cell.unit-2-3--lap > div.search-results > div:nth-child(1) > div.search-result__title > a',
 
     _init(currentPage){
         page = currentPage;
