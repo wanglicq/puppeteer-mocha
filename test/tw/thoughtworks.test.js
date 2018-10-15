@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 const expect = require('chai').expect;
-const pageObject = require('../pages/page');
+const pageObject = require('../../pages/page');
 const addContext = require('mochawesome/addContext');
 
 describe('sample test', async function() {
