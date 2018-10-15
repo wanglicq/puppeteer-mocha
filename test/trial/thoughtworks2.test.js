@@ -64,9 +64,9 @@ describe('sample test', async function() {
                 };
             });
             page.setViewport({width: dimensions.width, height: dimensions.height});
-            await page.screenshot({path: './output/failed.png'});
+            await page.screenshot({path: './output/failed2.png'});
             await addContext(this, 'hahahahaha test failed, look at the screenshot');
-            await addContext(this, '../output/failed.png');
+            await addContext(this, '../output/failed2.png');
             throw e;
         }
 
@@ -74,6 +74,6 @@ describe('sample test', async function() {
 
     it('should add context', function(){
         expect(1+1).to.equal(2);
-        addContext(this, 'context2');
+        addContext(this, 'context3');
     })
 });
