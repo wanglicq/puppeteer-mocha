@@ -21,7 +21,7 @@ describe('sample test', async function() {
         await browser.close();
     });
 
-    it('Website should load', async function() {
+    it('Website should load', async function() {//addContext of mochawesome can only use ES5 function, ES6 arrow doesn't work
         try{
             const response = await page.goto('https://www.thoughtworks.com/', {waitUntil: 'domcontentloaded'});
             expect(response.status()).to.equal(200);
