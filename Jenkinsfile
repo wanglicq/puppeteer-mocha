@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { image 'node:10.12.0'}
-    }
+    agent any
 
     stages {
         stage('test') {
@@ -19,6 +17,7 @@ pipeline {
     post{
         always {
             echo 'Waiting to attach test report to piepline'
+            archiveArtifacts artifacts: './mochawesome-report/*.jar', fingerprint: true
         }
         failure {
             echo 'Waiting to send email when fails'
