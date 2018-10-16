@@ -6,7 +6,7 @@ const addContext = require('mochawesome/addContext');
 describe('sample test', async function() {
     let browser, page;
     const opts = {
-        headless: false,
+        //headless: false,
         //slowMo: 10,
         //devtools: true,
     };
@@ -39,7 +39,7 @@ describe('sample test', async function() {
             //click example
             await page.waitForSelector(pageObject.thankYou);
             const thankYouTitle = await page.$eval(pageObject.thankYou, el => el.textContent);
-            expect(thankYouTitle).to.equal('Thank ou for 25 amazing years');
+            expect(thankYouTitle).to.equal('Thank you for 25 amazing years');
 
             await page.type(pageObject.search.searchBar, 'selenium');
             const [res2] = await Promise.all([
