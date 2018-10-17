@@ -56,14 +56,14 @@ describe('sample test', async function() {
 
         }catch (e) {
             //full screenshot
-            const dimensions = await page.evaluate(() => {
+            /*const dimensions = await page.evaluate(() => {
                 return {
                     width: document.documentElement.clientWidth,
                     height: document.documentElement.scrollHeight,
                     deviceScaleFactor: window.devicePixelRatio
                 };
             });
-            page.setViewport({width: dimensions.width, height: dimensions.height});
+            page.setViewport({width: dimensions.width, height: dimensions.height});*/
             await page.screenshot({path: './mochawesome-report/failed2.png'});
             await addContext(this, 'hahahahaha test failed, look at the screenshot');
             await addContext(this, './failed2.png');
