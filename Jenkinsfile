@@ -17,7 +17,18 @@ pipeline {
     post{
         always {
             echo 'Waiting to attach test report to piepline'
-            archiveArtifacts artifacts: './mochawesome-report/mochawesome.html', fingerprint: true
+            publishHTML(
+                    [
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: false,
+                        reportDir: 'mochawesome-report',
+                        reportFiles: 'mochawesome.html',
+                        reportName: 'HTML Report',
+                        reportTitles: ''
+                    ]
+                )
+            archiveArtifacts artifacts: './*.jar', fingerprint: true
         }
         failure {
             echo 'Waiting to send email when fails'
