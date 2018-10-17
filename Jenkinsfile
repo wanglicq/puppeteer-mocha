@@ -5,8 +5,6 @@ pipeline {
         stage('test') {
              steps {
                  echo 'Hello World'
-                 sh 'npm install mocha-parallel-tests'
-                 echo 'install complete'
                  timeout(time: 2, unit: 'MINUTES'){
                     retry(1){
                         sh 'npm run parallelTest'
