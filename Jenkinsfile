@@ -29,6 +29,7 @@ pipeline {
                         reportTitles: ''
                     ]
                 )
+            deleteDir() /*clean up workspace*/
         }
         failure {
             echo 'Waiting to send email when fails'
