@@ -17,7 +17,7 @@ pipeline {
     post{
         always {
             echo 'Waiting to attach test report to piepline'
-            archiveArtifacts artifacts: 'package.json'
+            archiveArtifacts artifacts: 'mochawesome-report/*.html'
             publishHTML(target:
                     [
                         allowMissing: false,
