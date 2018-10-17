@@ -21,7 +21,7 @@ pipeline {
                     [
                         allowMissing: false,
                         alwaysLinkToLastBuild: false,
-                        keepAll: false,
+                        keepAll: true,
                         reportDir: 'mochawesome-report',
                         reportFiles: 'mochawesome.html',
                         reportName: 'HTML Report',
