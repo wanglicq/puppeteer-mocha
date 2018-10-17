@@ -21,8 +21,8 @@ pipeline {
             publishHTML(target:
                     [
                         allowMissing: false,
-                        alwaysLinkToLastBuild: false,
-                        keepAll: true,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: false,
                         reportDir: 'mochawesome-report', //要显示在html中的图片要放在这个文件夹中，publish到jenkins pipeline的时候才找得到
                         reportFiles: 'mochawesome.html',
                         reportName: 'HTML Report',
