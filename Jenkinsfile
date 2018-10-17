@@ -17,7 +17,7 @@ pipeline {
     post{
         always {
             echo 'Waiting to attach test report to piepline'
-            archiveArtifacts artifacts: './mochawesome-report/*.jar', fingerprint: true
+            archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
         }
         failure {
             echo 'Waiting to send email when fails'
