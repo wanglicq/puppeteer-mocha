@@ -66,7 +66,7 @@ describe('sample test', async function() {
             page.setViewport({width: dimensions.width, height: dimensions.height});
             await page.screenshot({path: './mochawesome-report/failed.png'});
             await addContext(this, 'hahahahaha test failed, look at the screenshot');
-            await addContext(this, '../mochawesome-report/failed.png');
+            await addContext(this, 'failed.png');
             throw e;
         }
 
