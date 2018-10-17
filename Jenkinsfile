@@ -7,7 +7,7 @@ pipeline {
                  echo 'Hello World'
                  timeout(time: 2, unit: 'MINUTES'){
                     retry(1){
-                        sh 'npm test'
+                        sh 'npm run parallelTest'
                     }
                  }
              }
@@ -29,7 +29,7 @@ pipeline {
                         reportTitles: ''
                     ]
                 )
-            deleteDir() /*clean up workspace*/
+            //deleteDir() /*clean up workspace*/
         }
         failure {
             echo 'Waiting to send email when fails'
