@@ -23,13 +23,14 @@ pipeline {
                         allowMissing: false,
                         alwaysLinkToLastBuild: true,
                         keepAll: true,
-                        reportDir: 'mochawesome-report', //要显示在html中的图片要放在这个文件夹中，publish到jenkins pipeline的时候才找得到
+                        reportDir: 'mochawesome-report', //要显示在html中的图片要在这个文件夹中，publish到jenkins pipeline的时候才找得到, 然后才能显示出来
                         reportFiles: 'mochawesome.html',
                         reportName: 'HTML Report',
                         reportTitles: ''
                     ]
                 )
             //deleteDir() /*clean up workspace*/
+            echo 'waiting to store screenshot in output, then move to mochawesome-report'
         }
         failure {
             echo 'Waiting to send email when fails'
