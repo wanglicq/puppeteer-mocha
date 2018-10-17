@@ -22,7 +22,7 @@ pipeline {
                         allowMissing: false,
                         alwaysLinkToLastBuild: false,
                         keepAll: true,
-                        reportDir: 'mochawesome-report',
+                        reportDir: 'mochawesome-report', //图片要放在这个文件夹中，publish到jenkins pipeline的时候才找得到
                         reportFiles: 'mochawesome.html',
                         reportName: 'HTML Report',
                         reportTitles: ''
