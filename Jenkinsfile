@@ -17,11 +17,11 @@ pipeline {
     post{
         always {
             echo 'Waiting to attach test report to piepline'
-            publishHTML(
+            publishHTML(target:
                     [
                         allowMissing: false,
                         alwaysLinkToLastBuild: false,
-                        keepAll: false,
+                        keepAll: true,
                         reportDir: 'mochawesome-report',
                         reportFiles: 'mochawesome.html',
                         reportName: 'HTML Report',
