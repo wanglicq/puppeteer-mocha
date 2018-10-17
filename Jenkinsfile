@@ -3,6 +3,10 @@ pipeline {
 
     stages {
         stage('test') {
+
+             steps{
+                sh 'npm install mocha-parallel-tests'
+             }
              steps {
                  echo 'Hello World'
                  timeout(time: 2, unit: 'MINUTES'){
