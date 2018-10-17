@@ -17,6 +17,7 @@ pipeline {
     post{
         always {
             echo 'Waiting to attach test report to piepline'
+            archiveArtifacts artifacts: 'build/mochawesome-report/*.html'
             publishHTML(target:
                     [
                         allowMissing: false,
@@ -28,7 +29,6 @@ pipeline {
                         reportTitles: ''
                     ]
                 )
-            archiveArtifacts artifacts: './mochawesome-report/mochawesome.html'
         }
         failure {
             echo 'Waiting to send email when fails'
