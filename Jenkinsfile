@@ -33,9 +33,9 @@ pipeline {
             echo 'waiting to store screenshot in output, then move to mochawesome-report'
         }
         failure {
-            mail to: 'liwang@thoughtworks.com',
-                 subject: 'failed pipeline: ${currentBuild.fullDisplayName}',
-                 body: 'something is wrong with ${env.BUILD_URL}'
+            mail to: 'liwang@thoughtworks.com, bananatestsun@gmail.com',
+                 subject: "failed pipeline: ${currentBuild.fullDisplayName}",
+                 body: "something is wrong with ${env.BUILD_URL}"
         }
     }
 }
