@@ -28,7 +28,7 @@ pipeline {
                         reportTitles: ''
                     ]
                 )
-            archiveArtifacts artifacts: './*.jar', fingerprint: true
+            archiveArtifacts artifacts: './mochawesome-report/mochawesome.html'
         }
         failure {
             echo 'Waiting to send email when fails'
