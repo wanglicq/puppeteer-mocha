@@ -14,7 +14,7 @@ module.exports = {
         '2019 tech radar': '#home-tile-201810-radar-subscription',
         careers: '#home-tile-201807-careers'
     },
-    podcastsText: '#content-item > div.modules > div.modules__list > div:nth-child(3) > div > div > div > div > div > div > h2'
+    podcastsText: '#content-item > div.modules > div.modules__list > div:nth-child(3) > div > div > div > div > div > div > h2',
     thankYou: '#content-item > div.modules > div.modules__list > div.module.module-side_by_side_image_text > div > div > div > div > div > div:nth-child(2) > div > div > div > h2',
     seleniumBirth: 'body > div:nth-child(7) > div > div.grid__cell.unit-2-3--lap > div.search-results > div:nth-child(1) > div.search-result__title > a',
 
