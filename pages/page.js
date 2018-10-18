@@ -8,7 +8,7 @@ module.exports = {
 
     inventingAndDelivering:{
         technologyRadar: '#home-tile-201807-radar',
-        podcasts: '#home-tile-201807-podcasts',
+        podcasts: '#home-tile-2018010-podcasts',
         agileHabits: '#home-tile-201807-agile-habits-leader',
         '25 years': '#home-tile-201810-25years',
         '2019 tech radar': '#home-tile-201810-radar-subscription',
