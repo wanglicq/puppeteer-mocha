@@ -28,7 +28,7 @@ describe('sample test', async function() {
 
             const [res1] = await Promise.all([
                 page.waitForNavigation(),
-                page.click(pageObject.inventingAndDelivering["25 years"]),
+                page.click(pageObject.inventingAndDelivering.podcasts),
             ]);
 
             //click trigger navigation
@@ -37,9 +37,9 @@ describe('sample test', async function() {
             await navigation;*/
 
             //click example
-            await page.waitForSelector(pageObject.thankYou);
-            const thankYouTitle = await page.$eval(pageObject.thankYou, el => el.textContent);
-            expect(thankYouTitle).to.equal('Thank you for 25 amazing years');
+            await page.waitForSelector(pageObject.podcastsText);
+            const thankYouTitle = await page.$eval(pageObject.podcastsText, el => el.textContent);
+            expect(thankYouTitle).to.equal('Tech Talks that matter');
 
             await page.type(pageObject.search.searchBar, 'selenium');
             const [res2] = await Promise.all([
