@@ -17,7 +17,7 @@ pipeline {
     post{
         always {
             echo 'Waiting to attach test report to piepline'
-            archiveArtifacts artifacts: 'mochawesome-report/**/*' //路径不用点斜杠
+            archiveArtifacts artifacts: 'mochawesome-report/*.html' //路径不用点斜杠
             publishHTML(target:
                     [
                         allowMissing: false,
